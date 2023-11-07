@@ -1,12 +1,78 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo Certo - Sua loja de calçados</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            
+            <div class="horizontal titulo"><a href="index.html">
+                <h1>Passo Certo</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-strava" viewBox="0 0 16 16">
+                    <path d="M6.731 0 2 9.125h2.788L6.73 5.497l1.93 3.628h2.766L6.731 0zm4.694 9.125-1.372 2.756L8.66 9.125H6.547L10.053 16l3.484-6.875h-2.112z"/>
+                  </svg></a>
+            </div>
+       
+        <nav>
+            <ul>
+                <li><a href="cadastrousuario.html">Login</a></li>
+                <li><a href="cadastroprodutocalcado.html">Cadastro de produto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio">
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="fotos/tenis1.jpg" alt="Item 1" class="carousel-image">
+                <img src="fotos/tenis2.jpg" alt="Item 2" class="carousel-image">
+                <img src="fotos/tenis3.jpg" alt="Item 3" class="carousel-image">
+                <!-- Adicione mais imagens conforme necessário -->
+            </div>
+            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <footer>
+        <section id="sobre">
+            <h2>Sobre a Passo Certo</h2>
+            <p>A Passo Certo é uma loja de calçados com uma ampla seleção de estilos e marcas.</p>
+        </section>
         
-    </head>
-    <body>
-        oi
-    </body>
-    </html>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Email: contato@passocerto.com</p>
+            <p>Telefone: (11) 9999-9999</p>
+        </section>
+    </footer>
+
+    <script>
+        var slideIndex = 0;
+        showSlides(slideIndex);
+        
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("carousel-image");
+            if (n >= slides.length) {
+                slideIndex = 0
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.transform = "translateX(" + (-slideIndex * 100) + "%)";
+            }
+        }
+        </script>
+</body>
+</html>
